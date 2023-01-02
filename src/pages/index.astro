@@ -1,11 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Gabriel's Portfolio">
+  <nav>
+    <ul>
+      <Navbar href="/" title="Home" />
+      <Navbar href="/about" title="About" />
+    </ul>
+  </nav>
   <main>
-    <h1>Welcome to <span class="text-gradient-black">not</span> <span class="text-gradient">Astro</span></h1>
+    <h1><span class="text-gradient">Gabriel</span> Silva <span class="text-gradient">Gabriel</span></h1>
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
