@@ -1,16 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import Navbar from "../components/Navbar.astro";
+
+const projects = [
+  { title: "Genius", body: "First project", href: "/" },
+  { title: "Life", body: "Second project", href: "/about" },
+  { title: "WatchFlix", body: "Third project", href: "/test" },
+];
 ---
 
 <Layout title="Gabriel's Portfolio">
-  <nav>
-    <ul>
-      <Navbar href="/" title="Home" />
-      <Navbar href="/about" title="About" />
-    </ul>
-  </nav>
   <main>
     <h1><span class="text-gradient">Gabriel</span> Silva <span class="text-gradient">Gabriel</span></h1>
     <p class="instructions">
@@ -18,26 +17,7 @@ import Navbar from "../components/Navbar.astro";
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
     <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
+      {projects.map((project) => <Card href={project.href} title={project.title} body={project.body} />)}
     </ul>
   </main>
 </Layout>

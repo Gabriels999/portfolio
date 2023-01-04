@@ -1,20 +1,30 @@
 ---
-export interface Props {
-  title: string;
-  href: string;
-}
-
-const { href, title } = Astro.props;
+const { logo, navitems } = Astro.props;
 ---
 
-<li class="link-card">
-  <a href={href}>
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
-  </a>
-</li>
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href={logo.link}>
+        <img src={logo.img_path} alt={logo.msg} />
+      </a>
+    </div>
+    <nav>
+      <ul>
+        {
+          navitems.map((item) => (
+            <li class="link-card">
+              {" "}
+              <a href={item.link}>
+                <h2>{item.title}</h2>
+              </a>{" "}
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
 <style>
   .link-card {
     list-style: none;
@@ -43,11 +53,6 @@ const { href, title } = Astro.props;
     margin: 0;
     font-size: 1.25rem;
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    color: #444;
   }
   .link-card:is(:hover, :focus-within) {
     background-position: 0;
