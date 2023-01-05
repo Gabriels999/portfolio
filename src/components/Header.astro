@@ -3,7 +3,7 @@ const { logo, navitems } = Astro.props;
 ---
 
 <header>
-  <div class="container">
+  <div class="container bar">
     <div class="logo">
       <a href={logo.link}>
         <img src={logo.img_path} alt={logo.msg} />
@@ -26,17 +26,34 @@ const { logo, navitems } = Astro.props;
   </div>
 </header>
 <style>
-  .link-card {
-    list-style: none;
+  .container {
     display: flex;
-    padding: 0.15rem;
+    justify-content: space-between;
+    padding: 0 2.5%;
+  }
+
+  img {
+    margin-top: 35%;
+    width: 50px;
+    padding: 5px;
+  }
+
+  ul {
+    display: flex;
+  }
+  .bar,
+  .link-card {
     background-color: white;
     background-image: var(--accent-gradient);
     background-size: 400%;
     border-radius: 0.5rem;
     background-position: 100%;
+  }
+  .link-card {
+    padding: 0.15rem;
+    list-style: none;
+    display: flex;
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   }
 
   .link-card > a {
@@ -57,7 +74,8 @@ const { logo, navitems } = Astro.props;
   .link-card:is(:hover, :focus-within) {
     background-position: 0;
   }
-  .link-card:is(:hover, :focus-within) h2 {
+  .link-card:is(:hover, :focus-within) h2,
+  .link-area:is(:hover, :focus-within) {
     color: rgb(var(--accent));
   }
 </style>
