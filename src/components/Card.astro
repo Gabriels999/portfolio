@@ -5,11 +5,12 @@ export interface Props {
   href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, image, title, body } = Astro.props;
 ---
 
 <li class="link-card">
   <a href={href}>
+    <img src={image} alt={title} />
     <h2>
       {title}
     </h2>
@@ -19,6 +20,13 @@ const { href, title, body } = Astro.props;
   </a>
 </li>
 <style>
+  img {
+    border: 1px solid #dbd7d7;
+    width: 100%;
+    filter: grayscale(90%);
+    border-radius: 15px;
+    transition: ease-in-out 0.3s;
+  }
   .link-card {
     list-style: none;
     display: flex;
@@ -55,7 +63,8 @@ const { href, title, body } = Astro.props;
   .link-card:is(:hover, :focus-within) {
     background-position: 0;
   }
-  .link-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent));
+  .link-card:is(:hover, :focus-within) > a > img {
+    filter: grayscale(0);
+    transform: scale(1.05, 1.06);
   }
 </style>

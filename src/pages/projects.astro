@@ -1,13 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const projects = [
+  {
+    title: "React CRUD",
+    body: "First project",
+    href: "https://table-crud-h6pluqrz3-gabriels999.vercel.app/",
+    img: "/assets/table.png",
+  },
+  {
+    title: "WatchFlix",
+    body: "Second project",
+    href: "https://watch-flix-theta.vercel.app/",
+    img: "/assets/watchflix.png",
+  },
+  {
+    title: "Marvelflix",
+    body: "Third project",
+    href: "https://marvelflix-tau.vercel.app/",
+    img: "/assets/marvelflix.png",
+  },
+];
 ---
 
-<Layout title="Gabriel's Portfolio">
+<Layout title="My Projects">
   <main>
     <h1><span class="text-gradient">Gabriel</span> Silva <span class="text-gradient">Santos</span></h1>
     <p class="instructions">
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
+    <ul role="list" class="link-card-grid">
+      {
+        projects.map((project) => (
+          <Card href={project.href} image={project.img} title={project.title} body={project.body} />
+        ))
+      }
+    </ul>
   </main>
 </Layout>
 
