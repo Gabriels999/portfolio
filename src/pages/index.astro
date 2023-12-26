@@ -2,6 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import TextBlock from '../components/TextBlock.astro';
+
+const personalInfo = [
+	{
+		title: 'Name',
+		content: 'Gabriel Santos',
+	},
+	{
+		title: 'Education',
+		content: "Bachelor's Degree in Computer Science",
+	},
+	{
+		title: 'Stack',
+		content: 'Django, Vue, React',
+	},
+	{
+		title: 'Age',
+		content: '26',
+	},
+	{
+		title: 'City',
+		content: 'São Paulo, Brazil',
+	},
+	{
+		title: 'Email',
+		content: 'gab.tec97@gmail.com',
+	}
+]
 ---
 
 <Layout title="Welcome!">
@@ -34,16 +61,14 @@ import TextBlock from '../components/TextBlock.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
+		<div class="titles">
+			<h2>Hi! <span>&#x1F44B;</span></h2>
+			<h1>I'm <span class="text-gradient">Gabriel Santos</span>!</h1>
+		</div>
 		<TextBlock
 			imgPath='/author-pic.jpeg'
-			personalInfo="heyyyy"
-			title="Hi, I'm Gabriel!"
-			body="lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl sed aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc eu nisl. Sed vitae nisl euismod, aliquam nisl sed, aliquam nisl. Sed vitae nisl euismod, aliquam nisl sed, aliquam nisl. lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl sed aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc eu nisl. Sed vitae nisl euismod, aliquam nisl sed, aliquam nisl. Sed vitae nisl euismod, aliquam nisl sed, aliquam nisl."
+			personalInfo={personalInfo}
+			title="Who am I ?"
 		/>
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -87,6 +112,13 @@ import TextBlock from '../components/TextBlock.astro';
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	h2 {
+		font-size: 2rem;
+		font-weight: 400;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;

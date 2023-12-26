@@ -1,34 +1,51 @@
 ---
 interface Props {
 	title: string;
-	body: string;
-	personalInfo: string;
+	personalInfo: Array<any>;
 	imgPath: string;
 }
 
-const { title, body, personalInfo, imgPath } = Astro.props;
+const { title, personalInfo, imgPath } = Astro.props;
 ---
 
 <li class="link-card">
 	<div>
 		<h2>
 			{title}
-			<span>&#x1F44B;</span>
 		</h2>
 		<div class="link-card__mid-section">
 			<div id="personal-info">
-				{personalInfo}
+				<ul>
+					{
+						personalInfo.map((item) => (
+							<li>
+								{item.title}: {item.content}
+							</li>
+					))}
+				</ul>
 			</div>
 			<div id="image-box">
 				<img class="link-card__image" src={imgPath}/>
 			</div>
 		</div>
 		<p>
-			{body}
+			Hello there, my name is Gabriel Santos.
+		</p>
+		<p>
+			I'm a Full Stack Developer, I have been working with Python since 2017 and speacilly with Web Development since 2021.
+		</p>
+		<p>
+			Django, Vue and React are some of the most famous frameworks that I have experience with. 
+		</p>
+		<p>
+			I'm always looking for new challenges and learning new technologies, I'm a very communicative person and I like to work in teams, I'm always looking for new challenges and learning new technologies.
 		</p>
 	</div>
 </li>
 <style>
+	ul{
+		list-style: none;
+	}
 	.link-card {
 		list-style: none;
 		display: flex;
