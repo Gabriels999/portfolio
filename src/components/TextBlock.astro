@@ -4,22 +4,39 @@ interface PersonalInfo {
 	content: string;
 }
 
-interface Props {
-	title: string;
-	personalInfo: PersonalInfo[];
-	imgPath: string;
-}
+const personalInfo: PersonalInfo[] = [
+	{
+		title: 'Name',
+		content: 'Gabriel Santos',
+	},
+	{
+		title: 'Education',
+		content: "Bachelors Degree in Computer Science",
+	},
+	{
+		title: 'Stack',
+		content: 'Django, Vue, React',
+	},
+	{
+		title: 'Age',
+		content: '26',
+	},
+	{
+		title: 'City',
+		content: 'São Paulo, Brazil',
+	},
+	{
+		title: 'Email',
+		content: 'gab.tec97@gmail.com',
+	}
+]
 
-const { title, personalInfo, imgPath } = Astro.props;
-
-console.log(typeof(personalInfo));
-console.log(personalInfo);
 ---
 
 <li class="link-card">
 	<div>
 		<h2>
-			{title}
+			Who am I ?
 		</h2>
 		<div class="link-card__mid-section">
 			<div id="personal-info">
@@ -34,7 +51,7 @@ console.log(personalInfo);
 				</ul>
 			</div>
 			<div id="image-box">
-				<img class="link-card__image" src={imgPath}/>
+				<img class="link-card__image" src="/author-pic.jpeg"/>
 			</div>
 		</div>
 		<p>
