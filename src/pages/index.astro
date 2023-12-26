@@ -5,7 +5,7 @@ import TextBlock from '../components/TextBlock.astro';
 
 ---
 
-<Layout title="Welcome!">
+<Layout title="Gabriel Santos">
 	<main>
 		<svg
 			class="astro-a"
@@ -39,24 +39,29 @@ import TextBlock from '../components/TextBlock.astro';
 			<h2>Hi! <span>&#x1F44B;</span></h2>
 			<h1>I'm <span class="text-gradient">Gabriel Santos</span>!</h1>
 		</div>
-		<TextBlock />
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				href="https://www.linkedin.com/in/gabriel-santos-87aa58227/"
+				title="Linkedin"
+				imgPath="/linkedin.png"
 			/>
 			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+				href="https://gabrielsantosdev.com.br/"
+				title="Github"
+				imgPath="Check out online"
 			/>
 			<Card
-				href="https://feature-recreates-portfolio--dashing-cheesecake-d55dfe.netlify.app/"
+				href="https://gabrielsantosdev.com.br/"
 				title="Online Version"
-				body="Check out the online version of this site. ❤️"
+				imgPath="Check out online"
+			/>
+			<Card
+				href="https://gabrielsantosdev.com.br/"
+				title="Online Version"
+				imgPath="Check out online"
 			/>
 		</ul>
+		<TextBlock />
 	</main>
 </Layout>
 
@@ -119,8 +124,8 @@ import TextBlock from '../components/TextBlock.astro';
 		color: rgb(var(--accent-light));
 	}
 	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		display: flex;
+		/* grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr)); */
 		gap: 2rem;
 		padding: 0;
 	}
