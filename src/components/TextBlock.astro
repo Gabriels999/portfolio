@@ -1,11 +1,19 @@
 ---
+interface PersonalInfo {
+	title: string;
+	content: string;
+}
+
 interface Props {
 	title: string;
-	personalInfo: Array<any>;
+	personalInfo: PersonalInfo[];
 	imgPath: string;
 }
 
 const { title, personalInfo, imgPath } = Astro.props;
+
+console.log(typeof(personalInfo));
+console.log(personalInfo);
 ---
 
 <li class="link-card">
@@ -17,11 +25,12 @@ const { title, personalInfo, imgPath } = Astro.props;
 			<div id="personal-info">
 				<ul>
 					{
-						personalInfo.map((item) => (
+						personalInfo.map((item: PersonalInfo) => (
 							<li>
 								{item.title}: {item.content}
 							</li>
-					))}
+						))
+					}
 				</ul>
 			</div>
 			<div id="image-box">
