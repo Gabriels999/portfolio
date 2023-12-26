@@ -1,19 +1,14 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+navitems: Array<any>;
 }
 
-const { logo, navitems } = Astro.props;
+const { navitems } = Astro.props;
 ---
 
 <header>
   <div class="container bar">
     <div class="logo">
-      <a href={logo.link}>
-        <img src={logo.img_path} alt={logo.msg} />
-      </a>
     </div>
     <nav>
       <ul>
@@ -46,14 +41,17 @@ const { logo, navitems } = Astro.props;
 
   ul {
     display: flex;
+    margin: 0.5rem;
+    padding: 0;
   }
   .bar,
   .link-card {
     background-color: white;
     background-image: var(--accent-gradient);
     background-size: 400%;
-    border-radius: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
     background-position: 100%;
+    position: sticky;
   }
   .link-card {
     padding: 0.15rem;

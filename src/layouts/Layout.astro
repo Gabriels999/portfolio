@@ -3,6 +3,15 @@ interface Props {
 	title: string;
 }
 
+import Header from '../components/Header.astro';
+
+const routes = [
+  { title: "Home", link: "/" },
+  { title: "Projects", link: "/projects" },
+  { title: "Brag Document", link: "/brag_document" },
+  { title: "Blog", link: "/blog" },
+];
+
 const { title } = Astro.props;
 ---
 
@@ -16,7 +25,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body style="margin: 0;">
+    <Header navitems={ routes }/>
 		<slot />
 	</body>
 </html>
