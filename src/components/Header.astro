@@ -9,6 +9,7 @@ const { navitems } = Astro.props;
 <header>
   <div class="container bar">
     <div class="logo">
+      <img src="/logo.png" alt="Gabriel Santos logo">
     </div>
     <nav>
       <ul>
@@ -26,7 +27,20 @@ const { navitems } = Astro.props;
     </nav>
   </div>
 </header>
+
 <style>
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    /* background-image: var(--accent-gradient); */
+    background-size: 400%;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -34,9 +48,9 @@ const { navitems } = Astro.props;
   }
 
   img {
-    margin-top: 35%;
-    width: 50px;
-    padding: 5px;
+    margin-top: 0.5rem;
+    width: 25%;
+    border-radius: 50%;
   }
 
   ul {
@@ -46,8 +60,6 @@ const { navitems } = Astro.props;
   }
   .bar,
   .link-card {
-    background-color: white;
-    background-image: var(--accent-gradient);
     background-size: 400%;
     border-radius: 0 0 0.5rem 0.5rem;
     background-position: 100%;
@@ -67,7 +79,6 @@ const { navitems } = Astro.props;
     padding: 1rem 1.3rem;
     border-radius: 0.35rem;
     color: #111;
-    background-color: white;
     opacity: 0.8;
   }
   h2 {
